@@ -118,6 +118,6 @@ void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
 int main() {
     Traseu t("cruce", "rosie", 324);
     t.info_sup();
-    t.timp_aprox(2125, "neamenajata");
+    t.timp_aprox(2084, "neamenajata");
     return 0;
 }
