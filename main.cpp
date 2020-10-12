@@ -64,11 +64,11 @@ Traseu::Traseu(Traseu& traseu) {
 }
 
 Traseu::~Traseu() {
-    std::cout << "\nAvând aceste cunoştinţe şi noţiuni poţi aborda şi calcula mai bine traseele tale pe munte, astfel încât, să reduci riscurile la minim. Drum bun!:) \n";
+    std::cout << "\n Având aceste cunoştinţe şi noţiuni poţi aborda şi calcula mai bine traseele tale pe munte, astfel încât, să reduci riscurile la minim. Drum bun!:) \n";
 }
 
 void Traseu::info_sup() {
-        std::cout << "\n********************************* Informatii suplimentare legate de traseul ales *********************************\n\n";
+        std::cout << "\n******************************* Informatii suplimentare legate de traseul ales ******************************\n\n";
 
         if (culoare == "rosie" || culoare == "rosu") {
             std::cout << "Traseul are un grad mare de dificultate si dureaza aproximativ 5-9h\n";
@@ -101,7 +101,7 @@ void Traseu::info_sup() {
 }
 
 void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
-    std::cout << "\n************************ Calculul aproximativ al timpului pe traseu ***********************\n\n";
+    std::cout << "\n********************** Calculul aproximativ al timpului pe traseu *********************\n\n";
 
     int dif_altitudine = altitudine_maxima - altitudine;
     if (tip_poteca == "amenajata"){
@@ -116,7 +116,7 @@ void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
 }
 
 int main() {
-    Traseu t("cruce", "rosie", 485);
+    Traseu t("cruce", "rosie", 324);
     t.info_sup();
     t.timp_aprox(2125, "neamenajata");
     return 0;
