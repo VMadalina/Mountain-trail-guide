@@ -55,16 +55,16 @@ Traseu::Traseu(std::string forma, std::string culoare, int altitudine) {
 }
 
 Traseu::Traseu(Traseu& traseu) {
-    std::cout << "Constructorul de copiere \n";
+    std::cout << "Constructorul de copiere: \n";
     forma = traseu.forma;
     culoare = traseu.culoare;
     altitudine = traseu.altitudine;
 
-    std::cout << "\t\t" << this->forma << " " << culoare << " cu altitudinea initiala " << altitudine << "m\n";
+    std::cout << this->forma << " " << culoare << " cu altitudinea initiala " << altitudine << "m\n";
 }
 
 Traseu::~Traseu() {
-    std::cout << "\nDrum bun si verificati vremea!:) \n";
+    std::cout << "\nAvând aceste cunoştinţe şi noţiuni poţi aborda şi calcula mai bine traseele tale pe munte, astfel încât, să reduci riscurile la minim. Drum bun!:) \n";
 }
 
 void Traseu::info_sup() {
