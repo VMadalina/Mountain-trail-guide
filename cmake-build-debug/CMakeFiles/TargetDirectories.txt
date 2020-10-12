@@ -1,3 +1,0 @@
-F:/FACULTATE/Anul II/Sem I/OOP/Laborator/Proiect OOP/cmake-build-debug/CMakeFiles/Proiect_OOP.dir
-F:/FACULTATE/Anul II/Sem I/OOP/Laborator/Proiect OOP/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/FACULTATE/Anul II/Sem I/OOP/Laborator/Proiect OOP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
