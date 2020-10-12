@@ -101,7 +101,7 @@ void Traseu::info_sup() {
 }
 
 void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
-    std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n\n";
+    std::cout << "\n************************ Calculul aproximativ al timpului pe traseu ***********************\n\n";
 
     int dif_altitudine = altitudine_maxima - altitudine;
     if (tip_poteca == "amenajata"){
@@ -116,8 +116,8 @@ void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
 }
 
 int main() {
-    Traseu t("cruce", "rosie", 547);
+    Traseu t("cruce", "rosie", 485);
     t.info_sup();
-    t.timp_aprox(2034, "neamenajata");
+    t.timp_aprox(2125, "neamenajata");
     return 0;
 }
