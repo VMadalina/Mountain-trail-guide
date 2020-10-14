@@ -7,45 +7,16 @@ class Traseu {
     int altitudine;
 
 public:
-   Traseu();
-   explicit Traseu(std::string);
-   explicit Traseu(std::string, std::string);
-   explicit Traseu(std::string, std::string, int);
+   Traseu(std::string, std::string, int);
    Traseu(Traseu&);
    ~Traseu();
 
-   void info_sup();
-   void timp_aprox(int, std::string);
+   void info_sup() const;
+   void timp_aprox(int, std::string) const;
 };
 
-Traseu::Traseu() {
-    std::cout << "Traseul ales: ";
-    forma = "-";
-    culoare = "-";
-    altitudine = 0;
 
-    std::cout << this->forma << " " << culoare << " cu altitudinea initiala " << altitudine << "m\n"; //afisarea informatiilor pentru verificare
-}
-
-Traseu::Traseu(std::string forma) {
-    std::cout << "Traseul ales: ";
-    this->forma = forma;
-    culoare = "-";
-    altitudine = 0;
-
-    std::cout << this->forma << " " << culoare << " cu altitudinea initiala " << altitudine << "m\n";
-}
-
-Traseu::Traseu(std::string forma, std::string culoare) {
-    std::cout << "Traseul ales: ";
-    this->forma = forma;
-    this->culoare = culoare;
-    altitudine = 0;
-
-    std::cout << this->forma << " " << this->culoare << " cu altitudinea initiala " << altitudine << "m\n";
-}
-
-Traseu::Traseu(std::string forma, std::string culoare, int altitudine) {
+Traseu::Traseu(std::string forma = "-", std::string culoare = "-", int altitudine = 0) {
     std::cout << "Traseul ales: ";
     this->forma = forma;
     this->culoare = culoare;
@@ -56,19 +27,19 @@ Traseu::Traseu(std::string forma, std::string culoare, int altitudine) {
 
 Traseu::Traseu(Traseu& traseu) {
     std::cout << "Constructorul de copiere: \n";
-    forma = traseu.forma;
-    culoare = traseu.culoare;
-    altitudine = traseu.altitudine;
+    this->forma = traseu.forma;
+    this->culoare = traseu.culoare;
+    this->altitudine = traseu.altitudine;
 
-    std::cout << this->forma << " " << culoare << " cu altitudinea initiala " << altitudine << "m\n";
+    std::cout << this->forma << " " << this->culoare << " cu altitudinea initiala " << this->altitudine << "m\n";
 }
 
 Traseu::~Traseu() {
-    std::cout << "\n Având aceste cunoştinţe şi noţiuni poţi aborda şi calcula mai bine traseele tale pe munte, astfel încât, să reduci riscurile la minim. Drum bun!:) \n";
+    std::cout << "\nAvând aceste cunoştinţe şi noţiuni poţi aborda şi calcula mai bine traseele tale pe munte, astfel încât, să reduci riscurile la minim. Drum bun!:) \n";
 }
 
-void Traseu::info_sup() {
-        std::cout << "\n******************************* Informatii suplimentare legate de traseul ales ******************************\n\n";
+void Traseu::info_sup() const{
+        std::cout << "\n********************************* Informatii suplimentare legate de traseul ales *********************************\n\n";
 
         if (culoare == "rosie" || culoare == "rosu") {
             std::cout << "Traseul are un grad mare de dificultate si dureaza aproximativ 5-9h\n";
@@ -77,16 +48,13 @@ void Traseu::info_sup() {
         }
         if (culoare == "albastra" || culoare == "albastru") {
             std::cout << "Traseul are un grad mediu de dificultate si dureaza aproximativ 4-8h\n";
-            std::cout
-                    << "Diferenta de nivel este intre 500-1 000 m si efortul fizic depus este considerabil, insa se poate urca si in lipsa unei conditii fizice deosebite\n";
-            std::cout << "Altitudinea in care va incadrati va fi intre " << altitudine + 500 << "m si "
-                      << altitudine + 1000 << "m.\n";
+            std::cout << "Diferenta de nivel este intre 500-1 000 m si efortul fizic depus este considerabil, insa se poate urca si in lipsa unei conditii fizice deosebite\n";
+            std::cout << "Altitudinea in care va incadrati va fi intre " << altitudine + 500 << "m si " << altitudine + 1000 << "m.\n";
         }
         if (culoare == "galben" || culoare == "galbena") {
             std::cout << "Traseul are un grad mic de dificultate si dureaza aproximativ 3-6h\n";
             std::cout << "Diferenta de nivel este intre 300-700 m si efortul fizic este redus.\n";
-            std::cout << "Altitudinea in care va incadrati va fi intre " << altitudine + 300 << "m si "
-                      << altitudine + 700 << "m.\n";
+            std::cout << "Altitudinea in care va incadrati va fi intre " << altitudine + 300 << "m si " << altitudine + 700 << "m.\n";
         }
 
         if(forma == "dunga" || forma == "banda")
@@ -100,8 +68,8 @@ void Traseu::info_sup() {
 
 }
 
-void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
-    std::cout << "\n********************** Calculul aproximativ al timpului pe traseu *********************\n\n";
+void Traseu::timp_aprox(int altitudine_maxima, std::string const tip_poteca) const {
+    std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n\n";
 
     int dif_altitudine = altitudine_maxima - altitudine;
     if (tip_poteca == "amenajata"){
@@ -116,8 +84,10 @@ void Traseu::timp_aprox(int altitudine_maxima, std::string tip_poteca) {
 }
 
 int main() {
-    Traseu t("cruce", "rosie", 324);
+
+    Traseu t("cruce", "rosie", 547);
+
     t.info_sup();
-    t.timp_aprox(2084, "neamenajata");
+    t.timp_aprox(2034, "neamenajata");
     return 0;
 }
