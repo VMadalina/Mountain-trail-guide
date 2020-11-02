@@ -6,8 +6,8 @@
 int main() {
     std::ifstream fin_T;
     std::ifstream fin_M;
-    fin_T.open ("Traseu.txt");
-    fin_M.open ("Marcaj.txt");
+    fin_T.open ("files/Traseu.txt");
+    fin_M.open ("files/Marcaj.txt");
 
     std::string tip_poteca, culoare_marcaj, forma_marcaj;
     int altitudine_traseu, altitudine_maxima;
