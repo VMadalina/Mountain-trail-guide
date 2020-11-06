@@ -6,7 +6,6 @@
 #include <iostream>
 
 Marcaj::Marcaj(std::string forma, std::string culoare) {
-    std::cout << "Marcajul ales petru acest traseu: ";
     this->forma = forma;
     this->culoare = culoare;
 
@@ -22,7 +21,7 @@ Marcaj::Marcaj(Marcaj& traseu) {
 }
 
 Marcaj::~Marcaj() {
-    std::cout << "\nAvand aceste cunostinte si notiuni poti aborda si calcula mai bine traseele tale pe munte, astfel incat, sa reduci riscurile la minim. Drum bun!:) \n";
+    //std::cout << "\nAvand aceste cunostinte si notiuni poti aborda si calcula mai bine traseele tale pe munte, astfel incat, sa reduci riscurile la minim. Drum bun!:) \n";
 }
 
 void Marcaj::info_sup(Traseu tr) const{
@@ -53,4 +52,9 @@ void Marcaj::info_sup(Traseu tr) const{
     if(forma == "triunghi")
         std::cout << "Triunghiul este de regula folosit pentru traseele secundare care vin din vai.";
 
+}
+
+std::ostream& operator << (std::ostream& out, Marcaj& m) {
+    out << "Traseul ales este " << m.forma << " " << m.culoare << ".\n";
+    return out;
 }
