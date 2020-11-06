@@ -266,11 +266,11 @@
           </tr>
           <tr>
             <td class="headerName">File:</td>
-            <td class="headerValue">includes/Traseu.h</td>
+            <td class="headerValue">includes/Marcaj.h</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">10</td>
-            <td class="headerTableEntry">10</td>
+            <td class="headerTableEntry">6</td>
+            <td class="headerTableEntry">6</td>
             <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
@@ -324,228 +324,193 @@
     <td align="right" class="lineno"><pre>4</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#pragma once</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>5</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#pragma once</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>6</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include &lt;string&gt;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include &lt;vector&gt;</pre></td>
+    <td align="left" class="src "><pre>#include "Traseu.h"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;string&gt;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>class Traseu {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    std::string tip_poteca; //amenajata, neamenajata</pre></td>
+    <td align="left" class="src "><pre>class Marcaj {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int altitudine; //altitudinea de plecare</pre></td>
+    <td align="left" class="src "><pre>    std::string forma; // cruce, dunga/banda, bulina/punct, triunghi</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int altitudine_maxima;</pre></td>
+    <td align="left" class="src "><pre>    std::string culoare; // rosu, albastru, galben</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    std::vector &lt;Traseu&gt; trasee;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>public:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>public:</pre></td>
+    <td align="left" class="src "><pre>    Marcaj(std::string = "", std::string = "");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    Traseu(std::string = "", int = 0, int = 0);</pre></td>
+    <td align="left" class="src "><pre>    Marcaj(Marcaj&amp;);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    float timp_urcare(); //aproximare a timpului de urcare/coborare in functie de poteca aleasa si altitudinea maxima la care se doreste sa se ajunga</pre></td>
+    <td align="left" class="src "><pre>    ~Marcaj();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    friend std::ostream&amp; operator &lt;&lt; (std::ostream&amp;, Traseu&amp;);</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    void info_sup(Traseu) const; //informatii suplimentare generale legate de traseul ales, in functie de forma si culoare</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    //setter</pre></td>
+    <td align="left" class="src "><pre>    friend std::ostream&amp; operator &lt;&lt; (std::ostream&amp;, Marcaj&amp;);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    void set_tip_poteca(std::string tip_poteca) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>        this-&gt;tip_poteca = tip_poteca;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    //settere</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    }</pre></td>
+    <td align="left" class="src coveredLine"><pre>    void set_forma(std::string foma) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>        this-&gt;forma = foma;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    void set_alt_init(int alt_init) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>        this-&gt;altitudine = alt_init;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    }</pre></td>
+    <td align="left" class="src coveredLine"><pre>    void set_culoare(std::string culoare) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>        this-&gt;culoare = culoare;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    void set_alt_max(int alt_max) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>        this-&gt;altitudine_maxima = alt_max;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    //getter</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int get_alt() const;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>};</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
