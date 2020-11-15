@@ -27,5 +27,10 @@ public:
     void set_culoare(std::string culoare) {
         this->culoare = culoare;
     }
+
+    //gettere
+    std::string get_forma() {
+        return forma;
+    }
 };
 

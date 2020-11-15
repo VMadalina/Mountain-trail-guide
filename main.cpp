@@ -1,13 +1,14 @@
 #include "includes/Traseu.h"
 #include "includes/Marcaj.h"
+#include "includes/Traseu_marcat.h"
 #include <iostream>
 #include <fstream>
 
 int main() {
     std::ifstream fin_T;
     std::ifstream fin_M;
-    fin_T.open ("files/Traseu.txt");
-    fin_M.open ("files/Marcaj.txt");
+    fin_T.open ("Traseu.txt");
+    fin_M.open ("Marcaj.txt");
 
     std::string tip_poteca, forma_marcaj, culoare_marcaj;
     int nr_trasee, nr_marcaje, altitudine_traseu, altitudine_maxima;
@@ -40,5 +41,7 @@ int main() {
 
     fin_T.close();
     fin_M.close();
+
+    Traseu_marcat traseuMarcat;
     return 0;
 }
