@@ -12,7 +12,7 @@ Marcaj::Marcaj(std::string forma, std::string culoare) {
     std::cout << this->forma << " " << this->culoare << "\n";
 }
 
-Marcaj::Marcaj(Marcaj& traseu) {
+Marcaj::Marcaj(const Marcaj& traseu) {
     std::cout << "Constructorul de copiere: \n";
     this->forma = traseu.forma;
     this->culoare = traseu.culoare;
@@ -20,9 +20,7 @@ Marcaj::Marcaj(Marcaj& traseu) {
     std::cout << this->forma << " " << this->culoare << " cu altitudinea initiala " << "\n";
 }
 
-Marcaj::~Marcaj() {
-    //std::cout << "\nAvand aceste cunostinte si notiuni poti aborda si calcula mai bine traseele tale pe munte, astfel incat, sa reduci riscurile la minim. Drum bun!:) \n";
-}
+Marcaj::~Marcaj() = default;
 
 void Marcaj::info_sup(Traseu tr) const{
     std::cout << "\n********************************* Informatii suplimentare legate de traseul ales *********************************\n\n";
@@ -57,4 +55,12 @@ void Marcaj::info_sup(Traseu tr) const{
 std::ostream& operator << (std::ostream& out, Marcaj& m) {
     out << "Traseul ales este " << m.forma << " " << m.culoare << ".\n";
     return out;
+}
+
+std::istream& operator >> (std::istream& in, Marcaj& m) {
+    std::string forma, culoare;
+    in >> forma >> culoare;
+    m.set_culoare(culoare);
+    m.set_forma(forma);
+    return in;
 }

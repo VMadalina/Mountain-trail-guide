@@ -13,6 +13,6 @@ class Meteo {
     bool ploua;
     Traseu traseu;
 public:
-    float influenta_vreme ();
+    float influenta_vreme () const;
 };
 

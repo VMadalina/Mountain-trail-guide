@@ -4,8 +4,8 @@
 
 #include "../includes/Meteo.h"
 
-float Meteo::influenta_vreme() {
-    if ((ploua == true))
+float Meteo::influenta_vreme() const {
+    if (ploua == true)
         if (viteza_vant >= 29)
             return -1.5;
         else

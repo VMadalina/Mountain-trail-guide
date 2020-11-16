@@ -13,19 +13,20 @@ class Marcaj {
 
 public:
     Marcaj(std::string = "", std::string = "");
-    Marcaj(Marcaj&);
+    Marcaj(const Marcaj&);
     ~Marcaj();
 
     void info_sup(Traseu) const; //informatii suplimentare generale legate de traseul ales, in functie de forma si culoare
     friend std::ostream& operator << (std::ostream&, Marcaj&);
+    friend std::istream& operator >> (std::istream&, Marcaj&);
 
     //settere
-    void set_forma(std::string foma) {
-        this->forma = foma;
+    void set_forma(std::string form) {
+        this->forma = form;
     }
 
-    void set_culoare(std::string culoare) {
-        this->culoare = culoare;
+    void set_culoare(std::string cul) {
+        this->culoare = cul;
     }
 
     //gettere

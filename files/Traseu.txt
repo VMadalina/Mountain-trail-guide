@@ -1,4 +1,9 @@
-3
+8
 amenajata 230 2562
 amenajata 584 1265
 neamenajata 674 2084
+amenajata 23 1025
+neamenajata 236 2145
+neamenajata 12 1032
+amenajata 45 1265
+amenajata 521 2301
