@@ -34,7 +34,6 @@ int main() {
         }
     else
         std::cout << "Fisierul pentru marcaje nu a putut fi deschis";
-    int j = 0;
     for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata")
             t_marcat.push_back(new Traseu_marcat);
@@ -44,6 +43,9 @@ int main() {
 
     std::cout << t_marcat.size() << "\n";
     std::cout << t_nemarcat.size();
+    
+    t_marcat.clear();
+    t_nemarcat.clear();
 
     fin_T.close();
     fin_M.close();
