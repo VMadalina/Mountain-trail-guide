@@ -12,6 +12,8 @@ Traseu::Traseu(std::string tip_poteca, int altitudine, int altitudine_maxima) {
     this->altitudine_maxima = altitudine_maxima;
 }
 
+Traseu::~Traseu(){}
+
 int Traseu::get_alt() const {
     return altitudine;
 }
