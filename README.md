@@ -2,5 +2,5 @@ Proiect OOP
 
 Ghid pentru trasee montane
 
-Inca doar am facut clasele noi si mostenirea de la traseu. Nu am testat in main momentan nimica deoarece incerc sa vad cum sa leg cat mai bine toate clasele intre ele. 
-Inca ma gandesc cum pot sa integrez si calsa vreme cat mai bine.
+Ai putea sa imi scrii un scurt exemplu de un smart pointer pentru vectorul t_marcat? Imi tot dadea ceva eroare asa ca am lasat simplu, cu new momentan ca sa vad ca merge.
+Inca ma gandesc cum ar avea mai mult sens sa ii leg. Si voiam sa te intreb daca pot sa fac random cu elementele din fisier?
