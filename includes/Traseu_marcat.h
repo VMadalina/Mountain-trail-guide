@@ -10,6 +10,6 @@
 class Traseu_marcat : public Traseu {
     class Marcaj marcaj;
 public:
-    void timp_traseu ();
+    void timp_traseu_marcat();
 };
 

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <memory>
 
 int main() {
     std::ifstream fin_T;
@@ -18,8 +19,8 @@ int main() {
     fin_M >> nr_marcaje;
     Traseu traseu[nr_trasee];
     Marcaj marcaj[nr_marcaje];
-    std::vector<Traseu_marcat*> t_marcat;
-    std::vector<Traseu_nemarcat*> t_nemarcat;
+    std::vector<std::unique_ptr<Traseu_marcat>> t_marcat;
+    std::vector<std::unique_ptr<Traseu_nemarcat>> t_nemarcat;
 
     if (fin_T.is_open())
         for (int i = 0; i < nr_trasee; i++) {
@@ -36,14 +37,14 @@ int main() {
         std::cout << "Fisierul pentru marcaje nu a putut fi deschis";
     for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata")
-            t_marcat.push_back(new Traseu_marcat);
+            t_marcat.push_back(std::make_unique<Traseu_marcat>());
         else
-            t_nemarcat.push_back(new Traseu_nemarcat);
+            t_nemarcat.push_back(std::make_unique<Traseu_nemarcat>());
     }
 
     std::cout << t_marcat.size() << "\n";
     std::cout << t_nemarcat.size();
-    
+
     t_marcat.clear();
     t_nemarcat.clear();
 

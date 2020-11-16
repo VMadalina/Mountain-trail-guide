@@ -20,21 +20,21 @@ std::string Traseu::get_tip_poteca() const {
     return tip_poteca;
 }
 
-float Traseu::timp_urcare() {
+float Traseu::timp_traseu() {
     std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n\n";
 
     int dif_altitudine = this->altitudine_maxima - this->altitudine;
     float ore_urcare;
     if (this->tip_poteca == "amenajata")
-        ore_urcare = roundf(dif_altitudine / 350.0 );
+        ore_urcare = round(dif_altitudine / 350.0 );
     else
-        ore_urcare = roundf(dif_altitudine / 250.0 );
+        ore_urcare = round(dif_altitudine / 250.0 );
 
-    return std::fabs(ore_urcare);
+    return std::abs(ore_urcare);
 }
 
 std::ostream& operator << (std::ostream& out, Traseu& t) {
-    float timp = t.timp_urcare();
+    float timp = t.timp_traseu();
     out << "Urcarea pe poteca " << t.tip_poteca << " va dura aproximativ " << timp << " ore.\n";
     return out;
 }
