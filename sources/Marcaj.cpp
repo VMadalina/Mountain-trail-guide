@@ -22,7 +22,7 @@ Marcaj::Marcaj(const Marcaj& traseu) {
 
 Marcaj::~Marcaj() = default;
 
-void Marcaj::info_sup(Traseu tr) const{
+void Marcaj::info_sup(const Traseu& tr) const{
     std::cout << "\n********************************* Informatii suplimentare legate de traseul ales *********************************\n\n";
     int alt = tr.get_alt();
     if (culoare == "rosie" || culoare == "rosu") {

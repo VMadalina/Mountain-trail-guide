@@ -6,6 +6,7 @@
 
 #include "Traseu.h"
 #include <string>
+#include <memory>
 
 class Marcaj {
     std::string forma; // cruce, dunga/banda, bulina/punct, triunghi
@@ -16,7 +17,7 @@ public:
     Marcaj(const Marcaj&);
     ~Marcaj();
 
-    void info_sup(Traseu) const; //informatii suplimentare generale legate de traseul ales, in functie de forma si culoare
+    void info_sup(const Traseu&) const; //informatii suplimentare generale legate de traseul ales, in functie de forma si culoare
     friend std::ostream& operator << (std::ostream&, Marcaj&);
     friend std::istream& operator >> (std::istream&, Marcaj&);
 
@@ -32,6 +33,10 @@ public:
     //gettere
     std::string get_forma() {
         return forma;
+    }
+
+    std::string get_culoare() {
+        return culoare;
     }
 };
 

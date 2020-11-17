@@ -9,10 +9,9 @@
 
 class Meteo {
     float viteza_vant;
-    std::string cer; ///senin, innorat
     bool ploua;
     Traseu traseu;
 public:
-    float influenta_vreme () const;
+    float influenta_vreme() const;
 };
 

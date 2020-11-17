@@ -2,6 +2,7 @@ Proiect OOP
 
 Ghid pentru trasee montane
 
-Am modificat la vector asa cum mi-ai zis, doar ca acuma mi se blocheaza in actions la make. Nu inteleg exact ce trebuie sa modific, deoarece in clion imi merge bine...
-
-Inca ma gandesc cum ar avea mai mult sens sa ii leg. Si voiam sa te intreb daca pot sa fac random cu elementele din fisier?
+Am inecract sa fac un operator = pentru Traseu_marcat, dar imi da eroare. Nu imi dau seama exact de ce nu mi-l vede.
+Ceea ce incercam sa fac este ca pentru vectorul t_marcate sa ii dau un traseu random din vectorul traseu.
+Si ceva tot cu random am sa vreau sa fac si in cazul clasei Meteo. Sa am un fisier in care sa am mai multe variante de vreme,
+iar din alea, in functie de ce vreme nimeresti sa se adauge sau sa scada timpul pe traseu.
