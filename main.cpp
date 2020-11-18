@@ -51,7 +51,7 @@ int main() {
     
     for(int i = 0; i < t_marcat.size(); i++) {
         int random = (rand() % nr_marcaje) + 1;
-        t_marcat[i] = marcaj[random];
+        *t_marcat[i] = marcaj[random];
     }
 
     t_marcat.clear();
