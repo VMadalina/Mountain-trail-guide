@@ -27,6 +27,6 @@ std::istream& operator >> (std::istream& in, Traseu_marcat& tm) {
 
 Traseu_marcat &Traseu_marcat::operator = (Marcaj &m) {
     this->marcaj.set_culoare(m.get_culoare());
-    this->marcaj.set_forma(m.set_forma());
+    this->marcaj.set_forma(m.get_forma());
     return (*this);
 }
