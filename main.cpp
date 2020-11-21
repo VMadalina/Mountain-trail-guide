@@ -16,7 +16,7 @@ int main() {
     fin_T.open ("files/Traseu.txt");
     fin_M.open ("files/Marcaj.txt");
 
-    int nr_trasee, nr_marcaje;
+    int nr_trasee = 0, nr_marcaje = 0;
     std::string linie;
     srand((unsigned) time (nullptr));
 
@@ -42,16 +42,12 @@ int main() {
         fin_M >> marcaj[i];
 
     for (int i = 0; i < nr_trasee; i++) {
-        int random = (rand() % nr_marcaje) + 1;
-        if (traseu[i].get_tip_poteca() == "amenajata")
-            t_marcat.push_back(std::make_unique<Traseu_marcat>());
+        if (traseu[i].get_tip_poteca() == "amenajata") {
+            int random = (rand() % nr_marcaje) + 1;
+            t_marcat.push_back(std::make_unique<Traseu_marcat>(marcaj[random]));
+        }
         else
             t_nemarcat.push_back(std::make_unique<Traseu_nemarcat>());
-    }
-    
-    for(int i = 0; i < t_marcat.size(); i++) {
-        int random = (rand() % nr_marcaje) + 1;
-        *t_marcat[i] = marcaj[random];
     }
 
     t_marcat.clear();

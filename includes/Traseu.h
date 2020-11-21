@@ -6,7 +6,10 @@
 #include <string>
 
 class Traseu {
+protected:
     std::string tip_poteca; //amenajata, neamenajata
+
+private:
     int altitudine; //altitudinea de plecare
     int altitudine_maxima;
 

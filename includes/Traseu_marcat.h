@@ -10,7 +10,7 @@
 class Traseu_marcat : public Traseu {
     class Marcaj marcaj;
 public:
-    //Traseu_marcat(Marcaj);
+    Traseu_marcat(Marcaj);
     void timp_traseu_marcat();
     friend std::ostream& operator << (std::ostream&, Traseu_marcat&);
     friend std::istream& operator >> (std::istream&, Traseu_marcat&);

@@ -13,11 +13,10 @@ Marcaj::Marcaj(std::string forma, std::string culoare) {
 }
 
 Marcaj::Marcaj(const Marcaj& traseu) {
-    std::cout << "Constructorul de copiere: \n";
     this->forma = traseu.forma;
     this->culoare = traseu.culoare;
 
-    std::cout << this->forma << " " << this->culoare << " cu altitudinea initiala " << "\n";
+    std::cout << this->forma << " " << this->culoare;
 }
 
 Marcaj::~Marcaj() = default;
