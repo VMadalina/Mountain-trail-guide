@@ -43,7 +43,7 @@ int main() {
 
     for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata") {
-            int random = (rand() % nr_marcaje) + 1;
+            int random = (rand() % nr_marcaje);
             t_marcat.push_back(std::make_unique<Traseu_marcat>(marcaj[random]));
         }
         else
