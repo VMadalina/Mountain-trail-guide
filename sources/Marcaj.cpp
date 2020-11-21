@@ -9,14 +9,14 @@ Marcaj::Marcaj(std::string forma, std::string culoare) {
     this->forma = forma;
     this->culoare = culoare;
 
-    std::cout << this->forma << " " << this->culoare << "\n";
+    //std::cout << this->forma << " " << this->culoare << "\n";
 }
 
 Marcaj::Marcaj(const Marcaj& traseu) {
     this->forma = traseu.forma;
     this->culoare = traseu.culoare;
 
-    std::cout << this->forma << " " << this->culoare;
+    //std::cout << this->forma << " " << this->culoare;
 }
 
 Marcaj::~Marcaj() = default;
@@ -52,7 +52,7 @@ void Marcaj::info_sup(const Traseu& tr) const{
 }
 
 std::ostream& operator << (std::ostream& out, Marcaj& m) {
-    out << "Traseul ales este " << m.forma << " " << m.culoare << ".\n";
+    out << "Traseul ales este " << m.get_forma() << " " << m.get_culoare()<< ".\n";
     return out;
 }
 

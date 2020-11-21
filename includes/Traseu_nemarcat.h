@@ -8,5 +8,5 @@
 class Traseu_nemarcat: public Traseu {
     class Marcaj marcaj;
 public:
-    void timp_traseu_nemarcat();
+    float timp_traseu_nemarcat();
 };
