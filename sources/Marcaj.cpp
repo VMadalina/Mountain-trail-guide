@@ -3,7 +3,6 @@
 //
 
 #include "../includes/Marcaj.h"
-#include <iostream>
 
 Marcaj::Marcaj(std::string forma, std::string culoare) {
     this->forma = forma;

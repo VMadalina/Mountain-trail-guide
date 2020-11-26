@@ -3,18 +3,26 @@
 //
 
 #pragma  once
-
-#include <iostream>
 #include "Marcaj.h"
 
 class Traseu_marcat : public Traseu {
 protected:
     class Marcaj marcaj;
+    int pozitie;
 public:
-    Traseu_marcat(Marcaj);
-    float timp_traseu_marcat();
+    Traseu_marcat(const Marcaj&, int = 0);
+    static float timp_traseu_marcat(Traseu);
     friend std::ostream& operator << (std::ostream&, Traseu_marcat&);
-    //friend std::istream& operator >> (std::istream&, Traseu_marcat&);
     Traseu_marcat &operator = (Marcaj&);
+
+    //getteri
+    int get_poz() {
+        return pozitie;
+    }
+
+    //setteri
+    void set_poz(int poz) {
+        this->pozitie = poz;
+    }
 };
 

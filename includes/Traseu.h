@@ -2,8 +2,7 @@
 // Created by Madalina on 02/11/2020.
 //
 #pragma once
-
-#include <string>
+#include <iostream>
 
 class Traseu {
 protected:
@@ -35,6 +34,7 @@ public:
 
     //getter
     int get_alt() const;
+    int get_alt_max() const;
     std::string get_tip_poteca() const;
 };
 

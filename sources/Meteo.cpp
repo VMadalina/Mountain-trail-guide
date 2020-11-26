@@ -37,6 +37,6 @@ std::ostream& operator << (std::ostream& out, Meteo& m) {
     if (m.get_ploua())
         std::cout << "Si din pacate a inceput sa si ploua. \n";
     else
-        std::cout << "Macar nu ploua. \n";
+        std::cout << "Si nu ploua. Yaay! \n";
     return out;
 }

@@ -5,8 +5,6 @@
 #pragma once
 
 #include "Traseu.h"
-#include <string>
-#include <memory>
 
 class Marcaj {
     std::string forma; // cruce, dunga/banda, bulina/punct, triunghi

@@ -2,9 +2,7 @@
 // Created by Madalina on 02/11/2020.
 //
 #include "../includes/Traseu.h"
-
 #include <cmath>
-#include <iostream>
 
 Traseu::Traseu(std::string tip_poteca, int altitudine, int altitudine_maxima) {
     this->tip_poteca = tip_poteca;
@@ -12,20 +10,23 @@ Traseu::Traseu(std::string tip_poteca, int altitudine, int altitudine_maxima) {
     this->altitudine_maxima = altitudine_maxima;
 }
 
-Traseu::~Traseu(){}
+Traseu::~Traseu()= default;
 
 int Traseu::get_alt() const {
     return altitudine;
+}
+
+int Traseu::get_alt_max() const {
+    return altitudine_maxima;
 }
 
 std::string Traseu::get_tip_poteca() const {
     return tip_poteca;
 }
 
-
 //timpul tottal petrecut pe traseu (urcare + coborare)
 float Traseu::timp_traseu() {
-    std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n\n";
+    std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
 
     int dif_altitudine = this->altitudine_maxima - this->altitudine;
     float ore_traseu;
@@ -39,7 +40,7 @@ float Traseu::timp_traseu() {
 
 std::ostream& operator << (std::ostream& out, Traseu& t) {
     float timp = t.timp_traseu();
-    out << "Urcarea pe poteca " << t.get_tip_poteca() << " va dura aproximativ " << timp << " ore.\n";
+    out << "Traseul pe poteca " << t.get_tip_poteca() << " va dura aproximativ " << timp << " ore.\n";
     return out;
 }
 

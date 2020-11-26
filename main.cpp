@@ -2,8 +2,6 @@
 #include "includes/Marcaj.h"
 #include "includes/Traseu_marcat.h"
 #include "includes/Traseu_nemarcat.h"
-#include "includes/Meteo.h"
-#include <iostream>
 #include <fstream>
 #include <vector>
 #include <memory>
@@ -12,16 +10,14 @@
 
 
 int main() {
-    std::ifstream fin_T;
-    std::ifstream fin_M;
-    std::ifstream fin_Meteo;
+    std::ifstream fin_T,  fin_M, fin_Meteo, fin_A;
     fin_T.open ("files/Traseu.txt");
     fin_M.open ("files/Marcaj.txt");
     fin_Meteo.open ("files/Meteo.txt");
+    fin_A.open("files/Alegere.txt");
 
-    int nr_trasee = 0, nr_marcaje = 0;
-    std::string linie;
     srand((unsigned) time (nullptr));
+    int nr_trasee = 0, nr_marcaje = 0, alegere = 0;
 
     if (fin_T.is_open())
         fin_T >> nr_trasee;
@@ -43,7 +39,6 @@ int main() {
         fin_T >> traseu[i];
         fin_Meteo >> meteo[i];
     }
-
     for (int i = 0; i < nr_marcaje; i++)
         fin_M >> marcaj[i];
 
@@ -51,22 +46,39 @@ int main() {
         if (traseu[i].get_tip_poteca() == "amenajata") {
             int random = (rand() % nr_marcaje);
             t_marcat.push_back(std::make_unique<Traseu_marcat>(marcaj[random]));
+            t_marcat.back()->set_poz(i);
         }
-        else
-            t_nemarcat.push_back(std::make_unique<Traseu_nemarcat>());
+        else {
+            t_nemarcat.push_back(std::make_unique<Traseu_nemarcat>(traseu[i]));
+            t_nemarcat.back()->set_poz(i);
+        }
     }
 
-    //std::cout << meteo[0].influenta_vreme();
-    float timp = 0;
-    //timp = t_marcat0]->timp_traseu_marcat() + meteo[0].influenta_vreme();
-    //timp = traseu[0].timp_traseu();
-    timp = t_marcat[0]->timp_traseu_marcat();
-    std::cout << timp;
+    ///punem in fisier 1 pentru traseele marcate si 2 daca vrem sa alegem un traseu nemarcat
+    fin_A >> alegere;
+    if (alegere == 1) {
+        int random = (rand() % t_marcat.size());
+        std::cout << *t_marcat[random];
+        int random_vreme = (rand() % nr_trasee);
+        std::cout << meteo[random_vreme];
+        std::cout << t_marcat[random]->timp_traseu_marcat(traseu[t_marcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme() << " ore.\n";
+    }
+    else {
+        int random = (rand() % t_nemarcat.size());
+        std::cout << random << "\n";
+        int random_vreme = (rand() % nr_trasee);
+        std::cout << *t_nemarcat[random];
+        std::cout << meteo[random_vreme];
+        std::cout << t_nemarcat[random]->timp_traseu_nemarcat(traseu[t_nemarcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme() << " ore.\n";
+        t_nemarcat[random]->obiectiv_nou(meteo[random_vreme]);
+    }
 
     t_marcat.clear();
     t_nemarcat.clear();
     fin_T.close();
     fin_M.close();
+    fin_Meteo.close();
+    fin_A.close();
 
     return 0;
 }

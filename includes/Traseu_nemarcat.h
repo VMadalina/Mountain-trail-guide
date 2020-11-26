@@ -1,12 +1,26 @@
 // Created by Madalina on 15/11/2020.
 //
 #pragma once
+#include "Traseu.h"
+#include "Meteo.h"
 
-#include <iostream>
-#include "Marcaj.h"
+class Traseu_nemarcat: public Traseu, public Meteo {
+    int altitudine_noua;
+    int pozitie;
 
-class Traseu_nemarcat: public Traseu {
-    class Marcaj marcaj;
 public:
-    float timp_traseu_nemarcat();
+    Traseu_nemarcat(Traseu, int = 0, int = 0);
+    static float timp_traseu_nemarcat(Traseu);
+    void obiectiv_nou(Meteo);
+    friend std::ostream& operator << (std::ostream&, Traseu_nemarcat&);
+
+    //getteri
+    int get_poz() {
+        return pozitie;
+    }
+
+    //setteri
+    void set_poz(int poz) {
+        this->pozitie = poz;
+    }
 };
