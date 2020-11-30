@@ -12,7 +12,7 @@ Traseu_nemarcat::Traseu_nemarcat(Traseu t, int alt_noua, int poz) {
 }
 
 float Traseu_nemarcat::timp_traseu_nemarcat(Traseu t) {
-    float ore_noi = t.timp_traseu() + 1;
+    float ore_noi = t.timp_traseu() + 0.40;
     return ore_noi;
 }
 

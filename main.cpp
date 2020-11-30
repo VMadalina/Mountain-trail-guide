@@ -10,24 +10,28 @@
 
 
 int main() {
-    std::ifstream fin_T,  fin_M, fin_Meteo, fin_A;
-    fin_T.open ("files/Traseu.txt");
-    fin_M.open ("files/Marcaj.txt");
-    fin_Meteo.open ("files/Meteo.txt");
-    fin_A.open("files/Alegere.txt");
-
     srand((unsigned) time (nullptr));
+    std::ifstream fin_T,  fin_M, fin_Meteo, fin_A;
     int nr_trasee = 0, nr_marcaje = 0, alegere = 0;
 
-    if (fin_T.is_open())
+    try {
+        fin_T.exceptions(std::ifstream::failbit);
+        fin_M.exceptions(std::ifstream::failbit);
+        fin_Meteo.exceptions(std::ifstream::failbit);
+        fin_A.exceptions(std::ifstream::failbit);
+        fin_T.open("files/Traseu.txt");
+        fin_M.open("files/Marcaj.txt");
+        fin_Meteo.open ("files/Meteo.txt");
+        fin_A.open("files/Alegere.txt");
         fin_T >> nr_trasee;
-    else
-        std::cout << "Fisierul pentru trasee nu a putut fi deschis";
-
-    if (fin_M.is_open())
         fin_M >> nr_marcaje;
-    else
-        std::cout << "Fisierul pentru marcaje nu a putut fi deschis";
+        ///punem in fisier 1 pentru traseele marcate si 2 daca vrem sa alegem un traseu nemarcat
+        fin_A >> alegere;
+    }
+    catch (const std::ifstream::failure& err) {
+        std::cout << "Unul dintre fisiere nu a putut fi deschis.\n";
+        std::cout << err.what() << "\n" << err.code() << "\n";
+    }
 
     Traseu traseu[nr_trasee];
     Marcaj marcaj[nr_marcaje];
@@ -54,14 +58,14 @@ int main() {
         }
     }
 
-    ///punem in fisier 1 pentru traseele marcate si 2 daca vrem sa alegem un traseu nemarcat
-    fin_A >> alegere;
     if (alegere == 1) {
         int random = (rand() % t_marcat.size());
         std::cout << *t_marcat[random];
         int random_vreme = (rand() % nr_trasee);
         std::cout << meteo[random_vreme];
-        std::cout << t_marcat[random]->timp_traseu_marcat(traseu[t_marcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme() << " ore.\n";
+        int timp = t_marcat[random]->timp_traseu_marcat(traseu[t_marcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme();
+        std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
+        std::cout << timp << " ore si " << (t_marcat[random]->timp_traseu_marcat(traseu[t_marcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme() - timp) * 100 << " minute.\n";
     }
     else {
         int random = (rand() % t_nemarcat.size());

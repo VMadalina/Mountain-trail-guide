@@ -26,7 +26,7 @@ std::string Traseu::get_tip_poteca() const {
 
 //timpul tottal petrecut pe traseu (urcare + coborare)
 float Traseu::timp_traseu() {
-    std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
+   // std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
 
     int dif_altitudine = this->altitudine_maxima - this->altitudine;
     float ore_traseu;
