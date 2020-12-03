@@ -31,6 +31,7 @@ int main() {
     catch (const std::ifstream::failure& err) {
         std::cout << "Unul dintre fisiere nu a putut fi deschis.\n";
         std::cout << err.what() << "\n" << err.code() << "\n";
+        return 1;
     }
 
     Traseu traseu[nr_trasee];
@@ -63,9 +64,12 @@ int main() {
         std::cout << *t_marcat[random];
         int random_vreme = (rand() % nr_trasee);
         std::cout << meteo[random_vreme];
-        int timp = t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+        float timp_final = traseu[random].timp_traseu() + t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+        if( (timp_final - (int) timp_final) > 0.6)
+            timp_final = timp_final + 0.4;
+
         std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
-        std::cout << timp << " ore si " << (t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme() - timp) * 100 << " minute.\n";
+        std::cout << int (timp_final) << " ore si " << (timp_final - (int)timp_final) * 100 << " minute.\n";
     }
     else {
         int random = (rand() % t_nemarcat.size());
@@ -73,7 +77,11 @@ int main() {
         int random_vreme = (rand() % nr_trasee);
         std::cout << *t_nemarcat[random];
         std::cout << meteo[random_vreme];
-        std::cout << t_nemarcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme() << " ore.\n";
+        float timp_final = traseu[random].timp_traseu() + t_nemarcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+        if( (timp_final - (int) timp_final) > 0.6)
+            timp_final = timp_final + 0.4;
+        std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
+        std::cout << int (timp_final) << " ore si " << (timp_final - (int)timp_final) * 100 << " minute.\n";
         t_nemarcat[random]->obiectiv_nou(meteo[random_vreme]);
     }
 

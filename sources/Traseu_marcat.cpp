@@ -10,8 +10,7 @@ Traseu_marcat::Traseu_marcat(const Marcaj& m, int poz) {
 }
 
 float Traseu_marcat:: timp_traseu () {
-    float ore_noi = this->timp_traseu()- 0.20;
-    return ore_noi;
+    return -0.2;
 }
 
 std::ostream& operator << (std::ostream& out, Traseu_marcat& tm) {

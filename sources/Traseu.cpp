@@ -30,11 +30,7 @@ float Traseu::timp_traseu() {
 
     int dif_altitudine = this->altitudine_maxima - this->altitudine;
     float ore_traseu;
-    if (this->tip_poteca == "amenajata")
-        ore_traseu = round(dif_altitudine / 350.0 ) + round(dif_altitudine / 450.0 );
-    else
-        ore_traseu= round(dif_altitudine / 250.0 ) + round(dif_altitudine / 400.0 );
-
+    ore_traseu= round(dif_altitudine / 300.0 ) + round(dif_altitudine / 400.0 );
     return std::abs(ore_traseu);
 }
 
