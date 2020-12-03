@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-11-30 12:06:54</td>
+            <td class="headerValue">2020-12-03 16:48:35</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">7</td>
@@ -345,7 +345,7 @@
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 10 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>Traseu_nemarcat::Traseu_nemarcat(Traseu t, int alt_noua, int poz) {</pre></td>
+    <td align="left" class="src coveredLine"><pre>Traseu_nemarcat::Traseu_nemarcat(const Traseu&amp; t, int alt_noua, int poz) {</pre></td>
     </tr>
 
     <tr>
@@ -394,14 +394,14 @@
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>float Traseu_nemarcat::timp_traseu_nemarcat(Traseu t) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>float Traseu_nemarcat::timp_traseu() {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    float ore_noi = t.timp_traseu() + 0.40;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    float ore_noi = this-&gt;Traseu::timp_traseu() + 0.40;</pre></td>
     </tr>
 
     <tr>
