@@ -4,13 +4,21 @@
 
 #include "../includes/Traseu_marcat.h"
 
+Traseu_marcat::Traseu_marcat(const Traseu& t, const Marcaj& m, int poz) {
+    this->marcaj = m;
+    this->pozitie = poz;
+    this->set_alt_init(t.get_alt());
+    this->set_alt_max(t.get_alt_max());
+}
+
 Traseu_marcat::Traseu_marcat(const Marcaj& m, int poz) {
     this->marcaj = m;
     this->pozitie = poz;
 }
 
 float Traseu_marcat:: timp_traseu () {
-    return -0.2;
+    float ore = this->Traseu::timp_traseu() - 0.2;
+    return ore;
 }
 
 std::ostream& operator << (std::ostream& out, Traseu_marcat& tm) {

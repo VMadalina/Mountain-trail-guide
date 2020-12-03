@@ -34,6 +34,7 @@ int main() {
         return 1;
     }
 
+    std::vector<std::unique_ptr<Traseu>> trasee;
     Traseu traseu[nr_trasee];
     Marcaj marcaj[nr_marcaje];
     Meteo meteo[nr_trasee];
@@ -44,13 +45,23 @@ int main() {
         fin_T >> traseu[i];
         fin_Meteo >> meteo[i];
     }
-    for (int i = 0; i < nr_marcaje; i++)
+   /* for (int i = 0; i < nr_marcaje; i++)
         fin_M >> marcaj[i];
 
     for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata") {
             int random = (rand() % nr_marcaje);
-            t_marcat.push_back(std::make_unique<Traseu_marcat>(marcaj[random]));
+            trasee.push_back(std::make_unique<Traseu_marcat>(marcaj[random]));
+        }
+        else {
+            trasee.push_back(std::make_unique<Traseu_nemarcat>());
+        }
+    }*/
+
+    for (int i = 0; i < nr_trasee; i++) {
+        if (traseu[i].get_tip_poteca() == "amenajata") {
+            int random = (rand() % nr_marcaje);
+            t_marcat.push_back(std::make_unique<Traseu_marcat>(traseu[i], marcaj[random]));
             t_marcat.back()->set_poz(i);
         }
         else {
@@ -64,7 +75,7 @@ int main() {
         std::cout << *t_marcat[random];
         int random_vreme = (rand() % nr_trasee);
         std::cout << meteo[random_vreme];
-        float timp_final = traseu[random].timp_traseu() + t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+        float timp_final =t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
         if( (timp_final - (int) timp_final) > 0.6)
             timp_final = timp_final + 0.4;
 
@@ -77,7 +88,7 @@ int main() {
         int random_vreme = (rand() % nr_trasee);
         std::cout << *t_nemarcat[random];
         std::cout << meteo[random_vreme];
-        float timp_final = traseu[random].timp_traseu() + t_nemarcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+        float timp_final = t_nemarcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
         if( (timp_final - (int) timp_final) > 0.6)
             timp_final = timp_final + 0.4;
         std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
@@ -87,6 +98,7 @@ int main() {
 
     t_marcat.clear();
     t_nemarcat.clear();
+    trasee.clear();
     fin_T.close();
     fin_M.close();
     fin_Meteo.close();

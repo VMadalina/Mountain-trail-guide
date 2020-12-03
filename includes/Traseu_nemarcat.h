@@ -10,6 +10,7 @@ class Traseu_nemarcat: public Traseu, public Meteo {
 
 public:
     Traseu_nemarcat(const Traseu&, int = 0, int = 0);
+    Traseu_nemarcat(int = 0, int = 0);
     float timp_traseu();
     void obiectiv_nou(Meteo);
     friend std::ostream& operator << (std::ostream&, Traseu_nemarcat&);

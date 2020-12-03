@@ -10,6 +10,7 @@ protected:
     class Marcaj marcaj;
     int pozitie;
 public:
+    Traseu_marcat(const Traseu&, const Marcaj&, int = 0);
     Traseu_marcat(const Marcaj&, int = 0);
     float timp_traseu();
     friend std::ostream& operator << (std::ostream&, Traseu_marcat&);
