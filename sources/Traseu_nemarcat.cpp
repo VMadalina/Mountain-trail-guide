@@ -4,15 +4,15 @@
 
 #include "../includes/Traseu_nemarcat.h"
 
-Traseu_nemarcat::Traseu_nemarcat(Traseu t, int alt_noua, int poz) {
+Traseu_nemarcat::Traseu_nemarcat(const Traseu& t, int alt_noua, int poz) {
     this->set_alt_init(t.get_alt());
     this->set_alt_max(t.get_alt_max());
     this->altitudine_noua = alt_noua;
     this->pozitie = poz;
 }
 
-float Traseu_nemarcat::timp_traseu_nemarcat(Traseu t) {
-    float ore_noi = t.timp_traseu() + 0.40;
+float Traseu_nemarcat::timp_traseu() {
+    float ore_noi = this->timp_traseu() + 0.40;
     return ore_noi;
 }
 

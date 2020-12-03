@@ -11,7 +11,7 @@ protected:
     int pozitie;
 public:
     Traseu_marcat(const Marcaj&, int = 0);
-    static float timp_traseu_marcat(Traseu);
+    float timp_traseu();
     friend std::ostream& operator << (std::ostream&, Traseu_marcat&);
     Traseu_marcat &operator = (Marcaj&);
 

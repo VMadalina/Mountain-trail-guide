@@ -63,9 +63,9 @@ int main() {
         std::cout << *t_marcat[random];
         int random_vreme = (rand() % nr_trasee);
         std::cout << meteo[random_vreme];
-        int timp = t_marcat[random]->timp_traseu_marcat(traseu[t_marcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme();
+        int timp = t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
         std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
-        std::cout << timp << " ore si " << (t_marcat[random]->timp_traseu_marcat(traseu[t_marcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme() - timp) * 100 << " minute.\n";
+        std::cout << timp << " ore si " << (t_marcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme() - timp) * 100 << " minute.\n";
     }
     else {
         int random = (rand() % t_nemarcat.size());
@@ -73,7 +73,7 @@ int main() {
         int random_vreme = (rand() % nr_trasee);
         std::cout << *t_nemarcat[random];
         std::cout << meteo[random_vreme];
-        std::cout << t_nemarcat[random]->timp_traseu_nemarcat(traseu[t_nemarcat[random]->get_poz()]) + meteo[random_vreme].influenta_vreme() << " ore.\n";
+        std::cout << t_nemarcat[random]->timp_traseu() + meteo[random_vreme].influenta_vreme() << " ore.\n";
         t_nemarcat[random]->obiectiv_nou(meteo[random_vreme]);
     }
 
