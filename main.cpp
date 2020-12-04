@@ -33,14 +33,14 @@ int main() {
         fin_M.exceptions(std::ifstream::failbit);
         fin_Meteo.exceptions(std::ifstream::failbit);
         fin_A.exceptions(std::ifstream::failbit);
-        fin_T.open("files/Traseu.txt");
-        fin_M.open("files/Marcaj.txt");
-        fin_Meteo.open ("files/Meteo.txt");
-        fin_A.open("files/Alegere.txt");
+        fin_T.open("../files/Traseu.txt");
+        fin_M.open("../files/Marcaj.txt");
+        fin_Meteo.open ("../files/Meteo.txt");
+        //fin_A.open("files/Alegere.txt");
         fin_T >> nr_trasee;
         fin_M >> nr_marcaje;
         ///punem in fisier 1 pentru traseele marcate si 2 daca vrem sa alegem un traseu nemarcat
-        fin_A >> alegere;
+        //fin_A >> alegere;
     }
     catch (const std::ifstream::failure& err) {
         std::cout << "Unul dintre fisiere nu a putut fi deschis.\n";
@@ -117,7 +117,7 @@ int main() {
     fin_T.close();
     fin_M.close();
     fin_Meteo.close();
-    fin_A.close();
+    //fin_A.close();
 
     return 0;
 }
