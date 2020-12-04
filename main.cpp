@@ -7,7 +7,21 @@
 #include <memory>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
 
+void alege_traseu(int nr_trasee, Traseu *traseu, Meteo *meteo, std::vector <std::unique_ptr<Traseu>> &trasee) {
+    int random = (rand() % trasee.size());
+    //std::cout << *trasee[random];
+    int random_vreme = (rand() % nr_trasee);
+    std::cout << meteo[random_vreme];
+    float timp_final = traseu[random].timp_traseu() + trasee[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+    if( (timp_final - (int) timp_final) > 0.6)
+        timp_final = timp_final + 0.4;
+
+    std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
+    std::cout << (int) timp_final << " ore si " << std::round((timp_final - (int)timp_final) * 100) << " minute.\n";
+    
+}
 
 int main() {
     srand((unsigned) time (nullptr));
@@ -45,7 +59,7 @@ int main() {
         fin_T >> traseu[i];
         fin_Meteo >> meteo[i];
     }
-   /* for (int i = 0; i < nr_marcaje; i++)
+   for (int i = 0; i < nr_marcaje; i++)
         fin_M >> marcaj[i];
 
     for (int i = 0; i < nr_trasee; i++) {
@@ -56,9 +70,10 @@ int main() {
         else {
             trasee.push_back(std::make_unique<Traseu_nemarcat>());
         }
-    }*/
+    }
 
-    for (int i = 0; i < nr_trasee; i++) {
+    alege_traseu(nr_trasee, traseu, meteo, trasee);
+   /* for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata") {
             int random = (rand() % nr_marcaje);
             t_marcat.push_back(std::make_unique<Traseu_marcat>(traseu[i], marcaj[random]));
@@ -68,9 +83,9 @@ int main() {
             t_nemarcat.push_back(std::make_unique<Traseu_nemarcat>(traseu[i]));
             t_nemarcat.back()->set_poz(i);
         }
-    }
+    }*/
 
-    if (alegere == 1) {
+    /*if (alegere == 1) {
         int random = (rand() % t_marcat.size());
         std::cout << *t_marcat[random];
         int random_vreme = (rand() % nr_trasee);
@@ -94,7 +109,7 @@ int main() {
         std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
         std::cout << int (timp_final) << " ore si " << (timp_final - (int)timp_final) * 100 << " minute.\n";
         t_nemarcat[random]->obiectiv_nou(meteo[random_vreme]);
-    }
+    }*/
 
     t_marcat.clear();
     t_nemarcat.clear();

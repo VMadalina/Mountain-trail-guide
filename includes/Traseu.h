@@ -16,7 +16,6 @@ public:
     Traseu(std::string = "", int = 0, int = 0);
     virtual ~Traseu();
     virtual float timp_traseu(); //aproximare a timpului de urcare/coborare in functie de poteca aleasa si altitudinea maxima la care se doreste sa se ajunga
-    friend std::ostream& operator << (std::ostream&, Traseu&);
     friend std::istream& operator >> (std::istream&, Traseu&);
 
     //setter

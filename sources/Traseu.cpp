@@ -34,12 +34,6 @@ float Traseu::timp_traseu() {
     return std::abs(ore_traseu);
 }
 
-std::ostream& operator << (std::ostream& out, Traseu& t) {
-    float timp = t.timp_traseu();
-    out << "Traseul pe poteca " << t.get_tip_poteca() << " va dura aproximativ " << timp << " ore.\n";
-    return out;
-}
-
 std::istream& operator >> (std::istream& in, Traseu& t) {
     std::string tip_poteca;
     int alt, alt_max;
