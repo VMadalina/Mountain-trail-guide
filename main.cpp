@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <cmath>
 
-void alege_traseu(int nr_trasee, Traseu *traseu, Meteo *meteo, std::vector <std::unique_ptr<Traseu>> &trasee) {
+void timp_total_traseu(int nr_trasee, Traseu *traseu, Meteo *meteo, std::vector <std::unique_ptr<Traseu>> &trasee) {
     int random = (rand() % trasee.size());
     int random_vreme = (rand() % nr_trasee);
     std::cout << meteo[random_vreme];
@@ -48,8 +48,8 @@ int main() {
     Traseu traseu[nr_trasee];
     Marcaj marcaj[nr_marcaje];
     Meteo meteo[nr_trasee];
-    std::vector<std::unique_ptr<Traseu_marcat>> t_marcat;
-    std::vector<std::unique_ptr<Traseu_nemarcat>> t_nemarcat;
+    /*std::vector<std::unique_ptr<Traseu_marcat>> t_marcat;
+    std::vector<std::unique_ptr<Traseu_nemarcat>> t_nemarcat;*/
 
     for (int i = 0; i < nr_trasee; i++) {
         fin_T >> traseu[i];
@@ -68,7 +68,7 @@ int main() {
         }
     }
 
-    alege_traseu(nr_trasee, traseu, meteo, trasee);
+    timp_total_traseu(nr_trasee, traseu, meteo, trasee);
 
    /* for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata") {
@@ -108,8 +108,8 @@ int main() {
         t_nemarcat[random]->obiectiv_nou(meteo[random_vreme]);
     }*/
 
-    t_marcat.clear();
-    t_nemarcat.clear();
+    /*t_marcat.clear();
+    t_nemarcat.clear();*/
     trasee.clear();
     fin_T.close();
     fin_M.close();
