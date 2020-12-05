@@ -11,7 +11,6 @@
 
 void alege_traseu(int nr_trasee, Traseu *traseu, Meteo *meteo, std::vector <std::unique_ptr<Traseu>> &trasee) {
     int random = (rand() % trasee.size());
-    //std::cout << *trasee[random];
     int random_vreme = (rand() % nr_trasee);
     std::cout << meteo[random_vreme];
     float timp_final = traseu[random].timp_traseu() + trasee[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
@@ -26,7 +25,7 @@ void alege_traseu(int nr_trasee, Traseu *traseu, Meteo *meteo, std::vector <std:
 int main() {
     srand((unsigned) time (nullptr));
     std::ifstream fin_T,  fin_M, fin_Meteo, fin_A;
-    int nr_trasee = 0, nr_marcaje = 0, alegere = 0;
+    int nr_trasee = 0, nr_marcaje = 0;
 
     try {
         fin_T.exceptions(std::ifstream::failbit);
@@ -36,11 +35,8 @@ int main() {
         fin_T.open("../files/Traseu.txt");
         fin_M.open("../files/Marcaj.txt");
         fin_Meteo.open ("../files/Meteo.txt");
-        //fin_A.open("files/Alegere.txt");
         fin_T >> nr_trasee;
         fin_M >> nr_marcaje;
-        ///punem in fisier 1 pentru traseele marcate si 2 daca vrem sa alegem un traseu nemarcat
-        //fin_A >> alegere;
     }
     catch (const std::ifstream::failure& err) {
         std::cout << "Unul dintre fisiere nu a putut fi deschis.\n";
@@ -73,6 +69,7 @@ int main() {
     }
 
     alege_traseu(nr_trasee, traseu, meteo, trasee);
+
    /* for (int i = 0; i < nr_trasee; i++) {
         if (traseu[i].get_tip_poteca() == "amenajata") {
             int random = (rand() % nr_marcaje);
@@ -117,7 +114,6 @@ int main() {
     fin_T.close();
     fin_M.close();
     fin_Meteo.close();
-    //fin_A.close();
 
     return 0;
 }
