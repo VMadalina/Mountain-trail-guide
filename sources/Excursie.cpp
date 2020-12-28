@@ -22,7 +22,7 @@ void Excursie::timp_total(Meteo *meteo) {
 
 void Excursie::adauga_traseu(const Traseu& t, const Marcaj& marcaj) {
     if(t.get_tip_poteca() == "amenajata") {
-        trasee.push_back(std::make_unique<Traseu_marcat>(marcaj));
+        trasee.push_back(std::make_unique<Traseu_marcat>(t,marcaj));
     }
     else {
         trasee.push_back(std::make_unique<Traseu_nemarcat>());
