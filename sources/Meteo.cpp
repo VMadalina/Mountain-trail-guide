@@ -12,14 +12,14 @@ Meteo::Meteo(float vant, bool ploaie) {
 float Meteo::influenta_vreme() const {
     if (this->ploua == 1)
         if (this->viteza_vant >= 29)
-            return 3.4;
+            return 2;
         else
-            return 2.5;
+            return 1.2;
     else {
         if (this->viteza_vant >= 29)
-            return 1;
+            return 0.2;
         else
-            return 0.5;
+            return -0.3;
     }
 }
 

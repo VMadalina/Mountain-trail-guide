@@ -25,6 +25,6 @@ void Excursie::adauga_traseu(const Traseu& t, const Marcaj& marcaj) {
         trasee.push_back(std::make_unique<Traseu_marcat>(t,marcaj));
     }
     else {
-        trasee.push_back(std::make_unique<Traseu_nemarcat>());
+        trasee.push_back(std::make_unique<Traseu_nemarcat>(t));
     }
 }
