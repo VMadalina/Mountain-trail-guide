@@ -7,11 +7,11 @@
 #include "../includes/Traseu_marcat.h"
 #include <cmath>
 
-void Excursie::timp_total(int nr_trasee, Traseu *traseu, Meteo *meteo, std::vector <std::unique_ptr<Traseu>> &t) {
-    int random = (rand() % t.size());
-    int random_vreme = (rand() % nr_trasee);
+void Excursie::timp_total(Meteo *meteo) {
+    int random = (rand() % this->trasee.size());
+    int random_vreme = (rand() % this->trasee.size());
     std::cout << meteo[random_vreme];
-    float timp_final = traseu[random].timp_traseu() + t[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
+    float timp_final = trasee[random]->timp_traseu() + meteo[random_vreme].influenta_vreme();
     if( (timp_final - (int) timp_final) > 0.6)
         timp_final = timp_final + 0.4;
 

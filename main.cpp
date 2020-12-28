@@ -1,6 +1,5 @@
 #include "includes/Traseu.h"
 #include "includes/Marcaj.h"
-#include "includes/Traseu_marcat.h"
 #include "includes/Traseu_nemarcat.h"
 #include "includes/Excursie.h"
 #include <fstream>
@@ -44,16 +43,14 @@ int main() {
    for (int i = 0; i < nr_marcaje; i++)
         fin_M >> marcaj[i];
 
-    for (int i = 0; i < nr_trasee; i++) {
-        if (traseu[i].get_tip_poteca() == "amenajata") {
-            int random = (rand() % nr_marcaje);
-            trasee.push_back(std::make_unique<Traseu_marcat>(marcaj[random]));
-        }
-        else {
-            trasee.push_back(std::make_unique<Traseu_nemarcat>());
-        }
+    for (int i = 0; i < nr_trasee; i++)
+    {
+        int random = (rand() % nr_marcaje);
+        excursie.adauga_traseu(traseu[i], marcaj[random]);
     }
-    excursie.timp_total(nr_trasee, traseu, meteo, trasee);
+
+    excursie.timp_total(meteo);
+
     trasee.clear();
     fin_T.close();
     fin_M.close();

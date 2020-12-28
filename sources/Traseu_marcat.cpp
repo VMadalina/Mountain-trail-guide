@@ -17,7 +17,7 @@ Traseu_marcat::Traseu_marcat(const Marcaj& m, int poz) {
 }
 
 float Traseu_marcat:: timp_traseu () {
-    float ore = this->Traseu::timp_traseu() - 0.2;
+    float ore = this->Traseu::timp_traseu() - 0.1;
     return ore;
 }
 
