@@ -29,6 +29,7 @@ void Excursie::timp_total(Meteo *meteo) {
     std::cout << "\n*********************** Calculul aproximativ al timpului pe traseu *********************\n";
     std::cout << (int) timp_final << " ore si " << std::round((timp_final - (int)timp_final) * 100) << " minute.\n";
 
+    delete context;
 }
 
 void Excursie::adauga_traseu(const Traseu& t, const Marcaj& marcaj) {
