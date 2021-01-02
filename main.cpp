@@ -18,9 +18,9 @@ int main() {
         fin_M.exceptions(std::ifstream::failbit);
         fin_Meteo.exceptions(std::ifstream::failbit);
         fin_A.exceptions(std::ifstream::failbit);
-        fin_T.open("files/Traseu.txt");
-        fin_M.open("files/Marcaj.txt");
-        fin_Meteo.open ("files/Meteo.txt");
+        fin_T.open("/files/Traseu.txt");
+        fin_M.open("/files/Marcaj.txt");
+        fin_Meteo.open ("/files/Meteo.txt");
         fin_T >> nr_trasee;
         fin_M >> nr_marcaje;
     }
