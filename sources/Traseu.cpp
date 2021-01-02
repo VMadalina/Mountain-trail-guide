@@ -3,6 +3,7 @@
 //
 #include "../includes/Traseu.h"
 #include <cmath>
+#include <vector>
 
 Traseu::Traseu(std::string tip_poteca, int altitudine, int altitudine_maxima) {
     this->tip_poteca = tip_poteca;
